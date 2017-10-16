@@ -49,7 +49,7 @@ class GameList extends Component {
                 <GameImage>
                     {this.state.games.map(game => {
                         return (
-                            <Link to={`/games/${game._id}`}>
+                            <Link to={`/games/${game._id}`} key={game._id}>
                             <img src={game.coverLink} alt={game.title} />
                             <p>{game.title}</p>
                             </Link>

@@ -28,7 +28,6 @@ const re4 = new Game({
     Now a US agent, Leon is on a top secret mission to investigate the disappearance
     of the president's daughter. As Leon, you must make your way to a mysterious location in Europe, 
     where new enemies await. Take them down by using enhanced aim-and-shoot features and a new action button.`
-
 })
 
 const kh2 = new Game({
@@ -54,12 +53,41 @@ const gtaSanAndreas = new Game({
     On his return to the neighborhood, a couple of corrupt cops frame him for homicide. CJ is forced on a journey that takes him across the entire state of San Andreas, to save his family and to take control of the streets.`
 })
 
-const games = [re4, kh2, gtaSanAndreas];
+const halo2 = new Game({
+    title: "Halo 2",
+    price: "19.99",
+    releaseYear: "2004",
+    coverLink: "https://gamefaqs.akamaized.net/box/9/9/0/18990_front.jpg",
+    description: `The Covenant alien race threatens to destroy all humankind, and the only thing standing in its way is Master Chief, 
+    a genetically enhanced supersoldier. Master Chief returns in Halo 2, which features new vehicles, weapons, environments, and more. 
+    This time, you can interact with your environment, wield two weapons at the same time, board opponents' vehicles, 
+    and even switch sides to play the role of a Covenant Elite. Halo 2 also supports broadband multiplayer action via Xbox Live.`
+})
+
+const starWarsKotor = new Game({
+    title: "Star Wars: Knights of the Old Republic",
+    price: "19.99",
+    releaseYear: "2003",
+    coverLink: "https://gamefaqs.akamaized.net/box/2/4/7/14247_front.jpg",
+    description: `Long before the Galactic Civil War, an epic drama begins. 
+    Engage in this saga set in the Golden Age of the Republic--over 4,000 years before the first Star Wars film, when both Jedi and Sith number in the thousands. 
+    With the Galaxy reeling from a recent conflict with the Dark Lords, the ongoing battle between the Jedi and the Sith rages on. 
+    It's up to guide your customizable and evolving characters through ten different worlds, fast-paced minigames, and locations including a Sith world, the Wookie homeworld, and the Jedi Academy. 
+    Your actions determine the outcome of this colossal galactic war--and your destiny as a Jedi.`
+})
+
+const games = [re4, kh2, gtaSanAndreas, halo2, starWarsKotor];
 
 const playStation2 = new System({
     name: "PlayStation 2",
     releaseYear: "2000",
     games: [re4, kh2, gtaSanAndreas]
+})
+
+const xbox = new System({
+    name: "Xbox",
+    releaseYear: "2001",
+    games: [halo2, starWarsKotor]
 })
 
 
@@ -92,6 +120,14 @@ musa.save()
     })
 
 playStation2.save()
+    .then((system) => {
+        console.log(`${system.name} saved`)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+
+xbox.save()
     .then((system) => {
         console.log(`${system.name} saved`)
     })
