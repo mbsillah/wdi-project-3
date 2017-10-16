@@ -11,6 +11,7 @@ mongoose.Promise = global.Promise
 const app = express()
 
 mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true })
+
 const connection = mongoose.connection
 
 connection.on('connected', () => {

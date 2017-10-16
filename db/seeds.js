@@ -1,6 +1,7 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true })
+//mongoose.connect("mongodb://heroku_z7vxktxs:4rqvr1qn0niivqtbgvqljqeag6@ds163613.mlab.com:63613/heroku_z7vxktxs")
 mongoose.Promise = global.Promise
 const db = mongoose.connection;
 const { User, Game, System } = require('./schema');
