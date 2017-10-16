@@ -42,13 +42,27 @@ const kh2 = new Game({
     Voice actors Haley Joel Osment and James Woods join the cast, and the veteran designers of the original Kingdom Hearts have returned to work on the sequel.`
 })
 
-const games = [re4, kh2];
+const gtaSanAndreas = new Game({
+    title: "Grand Theft Auto: San Andreas",
+    price: "19.99",
+    releaseYear: "2004",
+    coverLink: "https://gamefaqs.akamaized.net/box/8/5/8/53858_front.jpg",
+    description: `Five years ago Carl Johnson escaped from the pressures of life in Los Santos, San Andreas... a city tearing itself apart with gang trouble, drugs and corruption. Where filmstars and millionaires do their best to avoid the dealers and gangbangers.
+    
+    Now, it's the early 90s. Carl's got to go home. His mother has been murdered, his family has fallen apart and his childhood friends are all heading towards disaster.
+    
+    On his return to the neighborhood, a couple of corrupt cops frame him for homicide. CJ is forced on a journey that takes him across the entire state of San Andreas, to save his family and to take control of the streets.`
+})
+
+const games = [re4, kh2, gtaSanAndreas];
 
 const playStation2 = new System({
     name: "PlayStation 2",
     releaseYear: "2000",
-    games: [re4, kh2]
+    games: [re4, kh2, gtaSanAndreas]
 })
+
+
 
 
 const musa = new User({
