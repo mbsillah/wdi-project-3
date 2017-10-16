@@ -4,23 +4,15 @@ const Schema = mongoose.Schema
 const UserSchema = new Schema({
     firstName: String,
     lastName: String,
-    email: {
-        type: String,
-        required: true
-    },
-    username: {
-        type: String,
-        required: true
-    },
-    password: {
-        type: String,
-        required: true
-    }
-})
+    email:  String,
+    username: String,
+    password: String
+    })
 
 const GameSchema = new Schema({
     title: String,
     price: String,
+    coverLink: String,
     releaseYear: String,
     description: String
 
