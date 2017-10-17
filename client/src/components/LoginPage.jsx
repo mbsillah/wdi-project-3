@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import SignUpForm from './SignUpForm'
 
 
 class LoginPage extends Component {
@@ -25,10 +26,11 @@ class LoginPage extends Component {
         return (
             <div>
                 <h1>Log-In</h1>
-                <h3>Please Select an Existing User</h3>
+                <h3>Please Select an Existing User or Create A New Account</h3>
                 {this.state.users.map(user => {
                     return (<Link to={`/user/${user._id}`}>{user.username}</Link>)
                 })}
+                <SignUpForm />
             </div>
         );
     }

@@ -8,29 +8,23 @@ class NavBar extends Component {
     systems: []
   }
 
-async componentWillMount() {
-  const res = await axios.get('api/systems')
-  this.setState({ systems: res.data})
-}
+  async componentWillMount() {
+    const res = await axios.get('api/systems')
+    this.setState({ systems: res.data })
+  }
 
-  render () {
-    return(
-    <div>
-        <div>
+  render() {
+    return (
+      <div>
           <Link to="/">Home</Link>
-        </div>
-        <div>
           <Link to="/login">Log In</Link>
-        </div>
         {this.state.systems.map(system => {
           return (
-            <div key={system._id}>
-              <Link to={`/systems/${system._id}`}>{system.name}</Link>
-            </div>
+              <Link key={system._id} to={`/systems/${system._id}`}>{system.name}</Link>
           )
         })}
-    </div>
-  )
+      </div>
+    )
   }
 }
 

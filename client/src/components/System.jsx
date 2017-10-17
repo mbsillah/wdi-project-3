@@ -26,23 +26,22 @@ class System extends Component {
         const { systemId } = this.props.match.params
         const res = await axios.get(`/api/systems/${systemId}`)
         console.log(res)
-        this.setState({games: res.data.games})
+        this.setState({ games: res.data.games })
     }
 
     render() {
         return (
-            
+
             <GameImage>
                 <h3>Current Games on Sale: </h3>
                 {this.state.games.map(game => {
-                        return (
-                            <Link to={`/games/${game._id}`} key={game._id}>
+                    return (
+                        <Link to={`/games/${game._id}`} key={game._id}>
                             <img src={game.coverLink} alt={game.title} />
                             <p>{game.title}</p>
-                            </Link>
-                            
-                            )
-                    })} 
+                        </Link>
+                    )
+                })}
             </GameImage>
         );
     }
