@@ -35,7 +35,7 @@ class SignUpForm extends Component {
         return (
             <div>
                 <h1>Sign Up</h1>
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <div>
                         <label htmlFor="firstName">First Name: </label>
                         <input onChange={this.handleChange} name="firstName" type="text" value={this.state.newUser.firstName} />
@@ -56,7 +56,7 @@ class SignUpForm extends Component {
                         <label htmlFor="password">Password: </label>
                         <input onChange={this.handleChange} name="password" type="text" value={this.state.newUser.password} />
                     </div>
-                    <button>Sign Up</button>
+                    <button>Save Edits</button>
                 </form>
             </div>
         );

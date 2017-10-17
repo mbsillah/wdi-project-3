@@ -21,6 +21,12 @@ class UserEdit extends Component {
         this.setState({ user: res.data })
     }
 
+    handleChange = (event) => {
+        const attribute = event.target.name
+        const updatedUser = { ...this.state.user }
+        updatedUser[attribute] = event.target.value
+        this.setState({ user: updatedUser })
+    }
 
 
     render() {
@@ -30,23 +36,23 @@ class UserEdit extends Component {
                 <form>
                     <div>
                         <label htmlFor="firstName">First Name: </label>
-                        <input name="firstName" type="text" value={this.state.newUser.firstName} />
+                        <input onChange={this.handleChange} name="firstName" type="text" value={this.state.user.firstName} />
                     </div>
                     <div>
                         <label htmlFor="lastName">Last Name: </label>
-                        <input name="lastName" type="text" value={this.state.newUser.lastName} />
+                        <input onChange={this.handleChange} name="lastName" type="text" value={this.state.user.lastName} />
                     </div>
                     <div>
                         <label htmlFor="email">Email Address: </label>
-                        <input name="email" type="text" value={this.state.newUser.email} />
+                        <input onChange={this.handleChange} name="email" type="text" value={this.state.user.email} />
                     </div>
                     <div>
                         <label htmlFor="username">Username: </label>
-                        <input name="username" type="text" value={this.state.newUser.username} />
+                        <input onChange={this.handleChange} name="username" type="text" value={this.state.user.username} />
                     </div>
                     <div>
                         <label htmlFor="password">Password: </label>
-                        <input name="password" type="text" value={this.state.newUser.password} />
+                        <input onChange={this.handleChange} name="password" type="text" value={this.state.user.password} />
                     </div>
                     <button>Sign Up</button>
                 </form>

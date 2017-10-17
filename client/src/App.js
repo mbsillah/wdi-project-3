@@ -6,6 +6,7 @@ import LoginPage from './components/LoginPage'
 import Game from './components/Game'
 import System from './components/System'
 import UserPage from './components/UserPage'
+import UserEdit from './components/UserEdit'
 
 class App extends Component {
   render() {
@@ -19,7 +20,7 @@ class App extends Component {
             <Route exact path="/games/:gameId" component={ Game }/>
             <Route exact path="/systems/:systemId" component={ System }/>
             <Route exact path="/users/:userId" component={ UserPage } />
-            <Route exact path="/user/:userId/edit" />
+            <Route exact path="/users/:userId/edit" component={ UserEdit } />
           </Switch>
         </div>
       </Router>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -19,6 +20,9 @@ class UserPage extends Component {
         return (
             <div>
                 <h1>{this.state.user.username}'s Page</h1>
+                <Link to={`/users/${this.state.user._id}/edit`}>
+                <button>Edit</button>
+                </Link>
             </div>
         );
     }
