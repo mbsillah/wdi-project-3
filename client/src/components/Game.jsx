@@ -23,7 +23,6 @@ class Game extends Component {
    async componentWillMount() {
         const { gameId } = this.props.match.params
         const res = await axios.get(`/api/games/${gameId}`)
-        console.log(res)
         this.setState({game: res.data})
     }
 

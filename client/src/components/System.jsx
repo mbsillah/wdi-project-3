@@ -5,13 +5,14 @@ import styled from 'styled-components';
 
 
 const GameImage = styled.div`
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
     img {
-        max-width: 10%;
-        max-height: 10%;     
+        max-width: 50%;
+        max-height: 50%;     
     }
     img: hover {
-        opacity: 1;
+        opacity: 0.9;
     }
     `
 
@@ -31,9 +32,9 @@ class System extends Component {
 
     render() {
         return (
-
+            <div>
+            <h3>Current Games on Sale: </h3>
             <GameImage>
-                <h3>Current Games on Sale: </h3>
                 {this.state.games.map(game => {
                     return (
                         <Link to={`/games/${game._id}`} key={game._id}>
@@ -43,6 +44,7 @@ class System extends Component {
                     )
                 })}
             </GameImage>
+            </div>
         );
     }
 }

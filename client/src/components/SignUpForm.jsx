@@ -12,7 +12,8 @@ class SignUpForm extends Component {
             email: '',
             username: '',
             password: ''
-        }
+        },
+        newUserId:''
     }
 
     handleChange = (event) => {
@@ -27,6 +28,7 @@ class SignUpForm extends Component {
         const res = await axios.post('/api/users', {
             'user': this.state.newUser
         })
+        this.setState({newUserId: res.data._id})
     }
 
     render() {

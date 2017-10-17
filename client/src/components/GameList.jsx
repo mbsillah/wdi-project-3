@@ -5,13 +5,14 @@ import styled from 'styled-components';
 
 
 const GameImage = styled.div`
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
     img {
-        max-width: 10%;
-        max-height: 10%;     
+        max-width: 50%;
+        max-height: 50%;     
     }
     img: hover {
-        opacity: 1;
+        opacity: 0.9;
     }
     `
 

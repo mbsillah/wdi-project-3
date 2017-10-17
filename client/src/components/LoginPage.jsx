@@ -22,13 +22,13 @@ class LoginPage extends Component {
         }
     }
 
-    render() {
+    render() {  
         return (
             <div>
                 <h1>Log-In</h1>
                 <h3>Please Select an Existing User or Create A New Account</h3>
                 {this.state.users.map(user => {
-                    return (<Link to={`/user/${user._id}`}>{user.username}</Link>)
+                    return (<Link key={user._id} to={`/users/${user._id}`}>{user.username}</Link>)
                 })}
                 <SignUpForm />
             </div>
