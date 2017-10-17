@@ -20,10 +20,10 @@ class Game extends Component {
         game: {}
     }
 
-   async componentWillMount() {
+    async componentWillMount() {
         const { gameId } = this.props.match.params
         const res = await axios.get(`/api/games/${gameId}`)
-        this.setState({game: res.data})
+        this.setState({ game: res.data })
     }
 
     render() {
@@ -31,7 +31,7 @@ class Game extends Component {
             <GamePage>
                 <h1>{this.state.game.title}</h1>
                 <GameImage>
-                    <img src={this.state.game.coverLink} alt={this.state.game.title}/>
+                    <img src={this.state.game.coverLink} alt={this.state.game.title} />
                 </GameImage>
                 <h4>Price:</h4><p>${this.state.game.price}</p>
                 <h4>Release Year:</h4><p>{this.state.game.releaseYear}</p>

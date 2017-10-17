@@ -12,13 +12,13 @@ class UserPage extends Component {
         const { userId } = this.props.match.params
         const res = await axios.get(`/api/users/${userId}`)
         console.log(res)
-        this.setState({user: res.data})
+        this.setState({ user: res.data })
     }
 
     render() {
         return (
             <div>
-                <h1>{this.state.user.username}</h1>
+                <h1>{this.state.user.username}'s Page</h1>
             </div>
         );
     }
