@@ -9,8 +9,12 @@ class NavBar extends Component {
   }
 
   async componentWillMount() {
-    const res = await axios.get('api/systems')
+    try {
+    const res = await axios.get('/api/systems')
     this.setState({ systems: res.data })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   render() {

@@ -26,7 +26,6 @@ class System extends Component {
     async componentWillMount() {
         const { systemId } = this.props.match.params
         const res = await axios.get(`/api/systems/${systemId}`)
-        console.log(res)
         this.setState({ games: res.data.games })
     }
 

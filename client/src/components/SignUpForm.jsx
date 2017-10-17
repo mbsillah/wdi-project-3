@@ -13,7 +13,6 @@ class SignUpForm extends Component {
             username: '',
             password: ''
         },
-        newUserId:''
     }
 
     handleChange = (event) => {
@@ -25,7 +24,7 @@ class SignUpForm extends Component {
 
     handleSubmit = async (event) => {
         event.preventDefault()
-        const res = await axios.post('/api/users', {
+        const res = await axios.post('/api/users/new', {
             'user': this.state.newUser
         })
         this.setState({newUserId: res.data._id})
@@ -35,7 +34,7 @@ class SignUpForm extends Component {
         return (
             <div>
                 <h1>Sign Up</h1>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="firstName">First Name: </label>
                         <input onChange={this.handleChange} name="firstName" type="text" value={this.state.newUser.firstName} />
@@ -56,7 +55,7 @@ class SignUpForm extends Component {
                         <label htmlFor="password">Password: </label>
                         <input onChange={this.handleChange} name="password" type="text" value={this.state.newUser.password} />
                     </div>
-                    <button>Save Edits</button>
+                    <button>Sign Up</button>
                 </form>
             </div>
         );

@@ -11,6 +11,16 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.post('/new', async (req, res) => {
+    try {
+        console.log(req.body)
+        const newUser = new User(req.body.user)
+        const saved = await newUser.save()
+        res.json(saved)
+    } catch (err) {
+        res.send(err)
+    }
+})
 
 router.get('/:id', async (req, res) => {
     try {
@@ -21,14 +31,23 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.post('/', async (req, res) => {
+
+router.put('/:id/edit', async (req, res) => {
     try {
         console.log(req.body)
-        const newUser = new User(req.body.user)
-        const saved = await newUser.save()
-        res.json(saved)
+        const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body.user, { new: true })
+        res.json(updatedUser)
     } catch (err) {
         res.send(err)
+    }
+})
+
+router.delete('/:id/delete', async (req, res) => {
+    try {
+        const deletedUser = await User.findByIdAndRemove(req.params.id)
+        res.json(deletedUser)
+    } catch (error) {
+        res.send(error)
     }
 })
 

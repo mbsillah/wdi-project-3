@@ -28,12 +28,21 @@ class UserEdit extends Component {
         this.setState({ user: updatedUser })
     }
 
+    handleSubmit = async (event) => {
+        event.preventDefault()
+        const res = await axios.put(`/api/users/${this.state.user._id}/edit`, {
+            'user': this.state.user
+        })
+        console.log(res)
+        this.setState({user: res.data})
+    }
+
 
     render() {
         return (
             <div>
                 <h3>Edit User</h3>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="firstName">First Name: </label>
                         <input onChange={this.handleChange} name="firstName" type="text" value={this.state.user.firstName} />
@@ -54,7 +63,7 @@ class UserEdit extends Component {
                         <label htmlFor="password">Password: </label>
                         <input onChange={this.handleChange} name="password" type="text" value={this.state.user.password} />
                     </div>
-                    <button>Sign Up</button>
+                    <button>Save Changes</button>
                 </form>
             </div>
         );

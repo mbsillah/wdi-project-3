@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { Redirect } from 'react-router-dom'
 
 
 class UserPage extends Component {
@@ -12,7 +13,12 @@ class UserPage extends Component {
     async componentWillMount() {
         const { userId } = this.props.match.params
         const res = await axios.get(`/api/users/${userId}`)
-        console.log(res)
+        this.setState({ user: res.data })
+    }
+
+    async deleteProfile() {
+        const { userId } = this.props.match.params
+        const res = await axios.get(`/api/users/${userId}`)
         this.setState({ user: res.data })
     }
 
@@ -23,6 +29,7 @@ class UserPage extends Component {
                 <Link to={`/users/${this.state.user._id}/edit`}>
                 <button>Edit</button>
                 </Link>
+                <button onClick={this.deleteProfile}>Delete</button>
             </div>
         );
     }
