@@ -40,6 +40,13 @@ class System extends Component {
         this.setState({ games: res.data.games })
     }
 
+    async componentWillReceiveProps(nextProps){
+        if (this.props.match.params.systemId !== nextProps.match.params.systemId){
+            const res = await axios.get(`/api/systems/${nextProps.match.params.systemId}`)
+            this.setState({ games: res.data.games })
+        }
+    }
+
     render() {
         return (
             <div>

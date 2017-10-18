@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import SignUpForm from './SignUpForm'
+import styled from 'styled-components';
 
+const LoginPageStyle = styled.div`
+text-align: center;
+a {
+    padding: 20px
+}
+`
 
 class LoginPage extends Component {
     state = {
@@ -22,16 +29,16 @@ class LoginPage extends Component {
         }
     }
 
-    render() {  
+    render() {
         return (
-            <div>
+            <LoginPageStyle>
                 <h1>Log-In</h1>
                 <h3>Please Select an Existing User or Create A New Account</h3>
                 {this.state.users.map(user => {
                     return (<Link key={user._id} to={`/users/${user._id}`}>{user.username}</Link>)
                 })}
                 <SignUpForm />
-            </div>
+            </LoginPageStyle>
         );
     }
 }
