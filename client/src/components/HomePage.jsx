@@ -3,7 +3,12 @@ import GameList from './GameList'
 import styled from 'styled-components';
 
 const MainStyle = styled.div`
-    text-align: center
+    text-align: center;
+    background-color: rgb(0,0,128);
+    h1{
+        padding: 10px;
+        margin: 0 auto;
+    }
 `
 
 
