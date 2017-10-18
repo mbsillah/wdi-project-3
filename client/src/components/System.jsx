@@ -4,16 +4,27 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 
 
-const GameImage = styled.div`
-    display: flex;
-    justify-content: space-around;
+const GameLink = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
+a {
+    width: 20%;
+    height: 20%;
+    border: 50px;
+    margin: 50px;
+
+
     img {
-        max-width: 50%;
-        max-height: 50%;     
+        width: 100%;
+        height: 100%;
+        &:hover {
+            opacity: .9;
+        }
+
     }
-    img: hover {
-        opacity: 0.9;
-    }
+}
     `
 
 
@@ -33,16 +44,15 @@ class System extends Component {
         return (
             <div>
             <h3>Current Games on Sale: </h3>
-            <GameImage>
+            <GameLink>
                 {this.state.games.map(game => {
                     return (
                         <Link to={`/games/${game._id}`} key={game._id}>
                             <img src={game.coverLink} alt={game.title} />
-                            <p>{game.title}</p>
                         </Link>
                     )
                 })}
-            </GameImage>
+            </GameLink>
             </div>
         );
     }

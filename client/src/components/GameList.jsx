@@ -12,7 +12,8 @@ const GameLink = styled.div`
     a {
         width: 20%;
         height: 20%;
-        padding: 50px;
+        border: 50px;
+        margin: 50px;
     
 
         img {
