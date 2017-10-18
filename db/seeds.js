@@ -77,7 +77,18 @@ const starWarsKotor = new Game({
     Your actions determine the outcome of this colossal galactic war--and your destiny as a Jedi.`
 })
 
-const games = [re4, kh2, gtaSanAndreas, halo2, starWarsKotor];
+const ssbm = new Game({
+    title: "Super Smash Bros. Melee",
+    price: "49.99",
+    releaseYear: "2001",
+    coverLink: "https://gamefaqs.akamaized.net/box/0/8/4/14084_front.jpg",
+    description: `Nintendo's all-star cast of combatants is back in Super Smash Bros. Melee, along with a new batch of brawlers ready to tear it up. 
+    The sequel to Super Smash Bros. keeps the same basic premise: Characters duke it out in interactive environments, using special attacks and various items to knock each other into the abyss. 
+    Some new defensive techniques add an even deeper level of complexity to the combat. 
+    In addition to traditional battle royale matches, players can select all-new ways to play like Coin mode and Tournament mode.`
+})
+
+const games = [re4, kh2, gtaSanAndreas, halo2, starWarsKotor, ssbm];
 
 const playStation2 = new System({
     name: "PlayStation 2",
@@ -89,6 +100,12 @@ const xbox = new System({
     name: "Xbox",
     releaseYear: "2001",
     games: [halo2, starWarsKotor]
+})
+
+const gameCube = new System({
+    name: "Nintendo Gamecube",
+    releaseYear: "2001",
+    games: [ssbm]
 })
 
 
@@ -135,5 +152,14 @@ xbox.save()
     .catch((error) => {
         console.log(error)
     })
+
+gameCube.save()
+    .then((system) => {
+        console.log(`${system.name} saved`)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+
 
 db.close();
