@@ -10,7 +10,7 @@ class UserPage extends Component {
         user: {
            _id: '' 
         },
-        redirectToUserPage: false
+        redirectToLoginPage: false
     }
 
 
@@ -23,11 +23,11 @@ class UserPage extends Component {
     deleteProfile = async () =>  {
         const userId  = this.state.user._id
         const res = await axios.delete(`/api/users/${userId}/delete`)
-        this.setState({redirectToUserPage: true, user: res.data })
+        this.setState({redirectToLoginPage: true, user: res.data })
     }
 
     render() {
-        if (this.state.redirectToUserPage) {
+        if (this.state.redirectToLoginPage) {
             return <Redirect to={`/login`} />
         }
         

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-//import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 
 class SignUpForm extends Component {
@@ -13,6 +13,7 @@ class SignUpForm extends Component {
             username: '',
             password: ''
         },
+        redirectToUserPage: false
     }
 
     handleChange = (event) => {
@@ -23,14 +24,18 @@ class SignUpForm extends Component {
     }
 
     handleSubmit = async (event) => {
-        event.preventDefault()
         const res = await axios.post('/api/users/new', {
             'user': this.state.newUser
         })
-        this.setState({newUserId: res.data._id})
+        this.setState({ redirectToUserPage: true, newUserId: res.data._id })
     }
 
     render() {
+
+        if(this.state.redirectToUserPage) {
+            return <Redirect to={`/login`} />
+        }
+
         return (
             <div>
                 <h1>Sign Up</h1>
