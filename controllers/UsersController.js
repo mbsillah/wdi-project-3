@@ -22,16 +22,6 @@ router.post('/new', async (req, res) => {
     }
 })
 
-router.get('/:id', async (req, res) => {
-    try {
-        const user = await User.findById(req.params.id)
-        res.json(user)
-    } catch (error) {
-        res.send(error)
-    }
-})
-
-
 router.put('/:id/edit', async (req, res) => {
     try {
         console.log(req.body)
@@ -44,8 +34,18 @@ router.put('/:id/edit', async (req, res) => {
 
 router.delete('/:id/delete', async (req, res) => {
     try {
+        console.log(req.body)
         const deletedUser = await User.findByIdAndRemove(req.params.id)
         res.json(deletedUser)
+    } catch (error) {
+        res.send(error)
+    }
+})
+
+router.get('/:id', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id)
+        res.json(user)
     } catch (error) {
         res.send(error)
     }
