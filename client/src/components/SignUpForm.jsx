@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import styled from 'styled-components';
+
+const Form = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+`
 
 
 class SignUpForm extends Component {
@@ -37,7 +45,7 @@ class SignUpForm extends Component {
         }
 
         return (
-            <div>
+            <Form>
                 <h1>Sign Up</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div>
@@ -62,7 +70,7 @@ class SignUpForm extends Component {
                     </div>
                     <button>Sign Up</button>
                 </form>
-            </div>
+            </Form>
         );
     }
 }
