@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 
 class UserEdit extends Component {
@@ -11,7 +11,8 @@ class UserEdit extends Component {
             email: '',
             username: '',
             password: ''
-        }
+        },
+        redirectToUserPage: false
     }
 
     async componentWillMount() {
@@ -34,11 +35,16 @@ class UserEdit extends Component {
             'user': this.state.user
         })
         console.log(res)
-        this.setState({user: res.data})
+        this.setState({redirectToUserPage: true, user: res.data})
     }
 
 
     render() {
+
+        if (this.state.redirectToUserPage) {
+            return <Redirect to={`/users/${this.state.user._id}`} />
+        }   
+
         return (
             <div>
                 <h3>Edit User</h3>

@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 router.post('/new', async (req, res) => {
     try {
         console.log(req.body)
-        const newUser = new User(req.body.user)
+        const newUser = new User(req.body   )
         const saved = await newUser.save()
         res.json(saved)
     } catch (err) {

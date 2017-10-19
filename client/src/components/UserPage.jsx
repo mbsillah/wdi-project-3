@@ -34,6 +34,7 @@ class UserPage extends Component {
         return (
             <div>
                 <h1>{this.state.user.username}'s Page</h1>
+                <div> {this.state.user.firstName} {this.state.user.lastName} </div>
                 <Link to={`/users/${this.state.user._id}/edit`}>
                 <button>Edit</button>
                 </Link>

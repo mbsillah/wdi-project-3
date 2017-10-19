@@ -3,11 +3,21 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 
+const MainStyle = styled.div`
+text-align: center;
+background-color: rgb(0,0,128);
+h3{
+    padding: 10px;
+    margin: 0 auto;
+}
+`
+
 
 const GameLink = styled.div`
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
+
 
 a {
     width: 20%;
@@ -49,7 +59,7 @@ class System extends Component {
 
     render() {
         return (
-            <div>
+            <MainStyle>
             <h3>Current Games on Sale: </h3>
             <GameLink>
                 {this.state.games.map(game => {
@@ -60,7 +70,7 @@ class System extends Component {
                     )
                 })}
             </GameLink>
-            </div>
+            </MainStyle>
         );
     }
 }
