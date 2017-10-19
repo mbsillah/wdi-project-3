@@ -8,6 +8,7 @@ const LoginPageStyle = styled.div`
 text-align: center;
 a {
     padding: 20px
+    color: black
 }
 `
 
