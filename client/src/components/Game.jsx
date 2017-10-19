@@ -3,8 +3,9 @@ import axios from 'axios'
 import styled from 'styled-components';
 
 const GamePage = styled.div`
-text-align: center;
+
 h1{
+    text-align: center;
     padding: 10px;
     margin: 0 auto;
 }
@@ -13,7 +14,9 @@ h1{
 const GameImage = styled.div`
     img {
         max-width: 30%;
-        max-height: 30%;     
+        max-height: 30%; 
+        float: left;
+        padding: 0px 50px
     }
     `
 
@@ -37,9 +40,9 @@ class Game extends Component {
                 <GameImage>
                     <img src={this.state.game.coverLink} alt={this.state.game.title} />
                 </GameImage>
-                <h4>Price:</h4><p>${this.state.game.price}</p>
-                <h4>Release Year:</h4><p>{this.state.game.releaseYear}</p>
-                <h4>Description:</h4><p>{this.state.game.description}</p>
+                <h4>Price:</h4><span>${this.state.game.price}</span>
+                <h4>Release Year:</h4><span>{this.state.game.releaseYear}</span>
+                <h4>Description:</h4><span>{this.state.game.description}</span>
             </GamePage>
         );
     }

@@ -1,4 +1,4 @@
-# General Assembly Project 2: Georgia Ultimate Marvel vs Capcom 3 Player Database
+# General Assembly Project 3: Old Man Game Store
 ## Overview
 
 **Live Site:** <https://immense-bayou-51887.herokuapp.com/>
