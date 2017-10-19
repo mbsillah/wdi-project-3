@@ -9,6 +9,10 @@ h1{
     padding: 10px;
     margin: 0 auto;
 }
+
+div{
+    background-color: white
+}
 `
 
 const GameImage = styled.div`
@@ -40,9 +44,9 @@ class Game extends Component {
                 <GameImage>
                     <img src={this.state.game.coverLink} alt={this.state.game.title} />
                 </GameImage>
-                <h4>Price:</h4><span>${this.state.game.price}</span>
-                <h4>Release Year:</h4><span>{this.state.game.releaseYear}</span>
-                <h4>Description:</h4><span>{this.state.game.description}</span>
+                <h3>Price:</h3><span>${this.state.game.price}</span>
+                <h3>Release Year:</h3><span>{this.state.game.releaseYear}</span>
+                <div><h3>Description:</h3><span>{this.state.game.description}</span></div>
             </GamePage>
         );
     }

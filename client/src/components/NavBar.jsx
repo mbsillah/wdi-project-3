@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const NavStyle = styled.div`
 
 ul{
-  background-color: red;
+  background-color: black;
   margin: 0 ;
   padding: 20px;
   display: flex;
@@ -16,7 +16,7 @@ ul{
 
 a {
   padding: 20px;
-  color: black
+  color: white
   }
 
 li a:hover {

@@ -2,9 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: rgb(12, 28, 172)
+
 }
 
 h1, h2, h3, h4, p, span {
- font-family: 'Bitter', serif;  
+ font-family: 'Bitter', serif; 
+ font-weight: bold;  
 }
