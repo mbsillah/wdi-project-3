@@ -7,7 +7,7 @@ I have made a store like database with React components.
 ## Technologies Used
  * HTML5, CSS3, Javascript, React, Express, Node, MongoDB, Mongoose
  * Visual Studio Code
- * Project Planning - [Trello](https://trello.com/b/7vby01fi/wdi-project-3)
+ * Project Planning - [Trello](https://trello.com/b/jqVfvSrh/wdi-project-4)
  * [ERD](https://github.com/sillah2010/wdi-project-3/blob/master/Screen%20Shots/IMG_1514.JPG)
 
 ## Wireframes

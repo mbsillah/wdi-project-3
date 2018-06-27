@@ -19,7 +19,6 @@ class UserEdit extends Component {
 
     async componentWillMount() {
         const { userId } = this.props.match.params
-        const res = await axios.get(`/api/users/${userId}`)
         console.log(res)
         this.setState({ user: res.data })
     }
